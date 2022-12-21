@@ -1,0 +1,60 @@
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: grid;
+  color: #dfe6e9;
+}
+
+.joinBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.joinpartybox {
+  color: #dfe6e9;
+  background-color: #636e72;
+  padding: 20px 80px 20px 80px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 60px;
+
+  -webkit-box-shadow: rgb(0, 0, 0) -10px 0px 13px -7px,
+    rgb(0, 0, 0) 10px 0px 13px -7px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: rgb(0, 0, 0) -10px 0px 13px -7px, rgb(0, 0, 0) 10px 0px 13px -7px,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.joinButton {
+  background-color: #00b894;
+  border-radius: 15px;
+  margin-top: 20px;
+  transition: 250ms;
+}
+
+.joinButton:hover {
+  cursor: pointer;
+  background-color: #13d6af;
+  transition: 250ms;
+}
+
+.joinButtonText {
+  margin: 10px 25px;
+}
+
+.joinpartytitle {
+  white-space: nowrap;
+}
