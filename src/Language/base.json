@@ -7,5 +7,12 @@
   "CreateParty": "Create a party",
   "nickname_error": "Invalid nickname !",
   "code_error": "Invalid code !",
-  "code_full": "The game is full !"
+  "code_full": "The game is full !",
+  "players": "Players :",
+  "start": "Start the game",
+  "role1": "Impostor : To make lose the game without being unmasked",
+  "role2": "The pacifist: Do not kill once the enemy of his lane",
+  "role3": "Broken keyboard: Playing a champion with a broken spell",
+  "role4": "Feather Sword: Do less than 10000 damage",
+  "role5": "Write a music/poem/drawing with the words imposed by the other players at the beginning of the game!"
 }
