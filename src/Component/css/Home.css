@@ -41,7 +41,6 @@
 .joinButton {
   background-color: #00b894;
   border-radius: 15px;
-  margin-top: 20px;
   transition: 250ms;
 }
 
@@ -57,4 +56,8 @@
 
 .joinpartytitle {
   white-space: nowrap;
+}
+
+.error {
+  color: #ff7675;
 }
