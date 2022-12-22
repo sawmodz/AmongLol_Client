@@ -1,4 +1,11 @@
 {
   "Title": "AmongLol",
-  "Nickname": "Join Party !"
+  "JoinParty": "Join Game !",
+  "Nickname": "Nickname",
+  "Code": "Code",
+  "Join": "Join",
+  "CreateParty": "Create a party",
+  "nickname_error": "Invalid nickname !",
+  "code_error": "Invalid code !",
+  "code_full": "The game is full !"
 }

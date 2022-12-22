@@ -4,5 +4,8 @@
   "Nickname": "Pseudo",
   "Code": "Code ",
   "Join": "Rejoindre",
-  "CreateParty": "Creer une Partie"
+  "CreateParty": "Creer une Partie",
+  "nickname_error": "Pseudo incorrect !",
+  "code_error": "Le code est incorrect",
+  "code_full": "La partie est complete"
 }

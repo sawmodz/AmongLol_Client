@@ -1,0 +1,11 @@
+{
+  "Title": "AmongLol",
+  "JoinParty": "ゲームに参加する",
+  "Nickname": "綽名",
+  "Code": "コード ",
+  "Join": "繋ぎ合",
+  "CreateParty": "ゲームを作る",
+  "nickname_error": "綽名エラー",
+  "code_error": "コードエラー",
+  "code_full": "ゲームは満杯です"
+}
