@@ -7,12 +7,11 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     if (localStorage.getItem("match") !== null) {
-      const match = localStorage.getItem("match");
-      window.location.replace("http://localhost:3001/ingame?id=" + match.id);
+      window.location.replace("http://localhost:3001/ingame");
     }
     props.socket.on("createParty", (message) => {
       localStorage.setItem("match", JSON.stringify(message.match));
-      window.location.replace("http://localhost:3001/ingame?id=" + message.id);
+      window.location.replace("http://localhost:3001/ingame");
     });
 
     props.socket.on("joinParty", (message) => {
@@ -27,7 +26,7 @@ export default class Home extends React.Component {
           break;
       }
       localStorage.setItem("match", JSON.stringify(message.match));
-      window.location.replace("http://localhost:3001/ingame?id=" + message.id);
+      window.location.replace("http://localhost:3001/ingame");
     });
 
     const lg = window.navigator.language;

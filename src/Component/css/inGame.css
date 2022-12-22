@@ -1,0 +1,82 @@
+.users {
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.user {
+  display: flex;
+}
+
+.userName {
+  color: #dfe6e9;
+  margin: 0;
+  display: inline;
+  padding-right: 10px;
+  padding-left: 15px;
+}
+
+.userTrash {
+  width: 20px;
+  height: 20px;
+}
+
+.userTrash:hover {
+  cursor: pointer;
+}
+
+.userCrown {
+  width: 20px;
+  height: 20px;
+}
+
+.joueur {
+  color: #dfe6e9;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.Main {
+  height: 80vh;
+}
+
+.status {
+  color: #dfe6e9;
+  font-size: 75px;
+}
+
+.center {
+  flex-direction: column;
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+}
+
+.startButton {
+  background-color: #00b894;
+  border-radius: 15px;
+  transition: 250ms;
+}
+
+.startButtonDisable {
+  background-color: #ff7675;
+  border-radius: 15px;
+}
+
+.startButton:hover {
+  cursor: pointer;
+  background-color: #13d6af;
+  transition: 250ms;
+}
+
+.buttonText {
+  margin: 10px 25px;
+  color: #dfe6e9;
+}
+
+.roles {
+  color: #dfe6e9;
+  width: 50%;
+  text-align: center;
+}
