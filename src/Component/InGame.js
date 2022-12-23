@@ -11,6 +11,7 @@ export default class InGame extends React.Component {
     isOwner: false,
     status: "",
     roles: 0,
+    rolesResult: {},
   };
   constructor(props) {
     super(props);
@@ -43,6 +44,10 @@ export default class InGame extends React.Component {
         isOwner: message.match.owner === match.nickname,
         status: message.match.status,
       });
+    });
+
+    props.socket.on("chooseRoles", (message) => {
+      this.setState({ status: message.status });
     });
 
     props.socket.on("playerJoin", (message) => {
@@ -129,7 +134,69 @@ export default class InGame extends React.Component {
           <h2 className="roles">
             {this.state.status === 1 && this.state.roles}
           </h2>
-          {this.state.isOwner && this.state.status !== 1 && (
+          {(this.state.isOwner && this.state.status) === 1 && (
+            <div
+              className="startButton"
+              onClick={() => {
+                this.props.socket.emit("chooseRoles", { code: storage.id });
+              }}
+            >
+              <h2 className="buttonText">{language.finishRolesPhases}</h2>
+            </div>
+          )}
+          {this.state.status === 2 && (
+            <div className="selector">
+              {this.state.users.map((user, key) => {
+                return (
+                  <div
+                    key={key}
+                    className="selectorUser"
+                    onChange={(e) => {
+                      this.setState({
+                        rolesResult: {
+                          ...this.state.rolesResult,
+                          [user]: e.target.value,
+                        },
+                      });
+                      console.log(this.state.rolesResult);
+                    }}
+                  >
+                    <h3 className="selectorTitle">{user}</h3>
+                    <select
+                      className="selectRank"
+                      defaultValue={language.nothing}
+                    >
+                      <option value={language.nothing} selected>
+                        {language.nothing}
+                      </option>
+                      <option value={language.role1_title}>
+                        {language.role1_title}
+                      </option>
+                      <option value={language.role2_title}>
+                        {language.role2_title}
+                      </option>
+                      <option value={language.role3_title}>
+                        {language.role3_title}
+                      </option>
+                      <option value={language.role4_title}>
+                        {language.role4_title}
+                      </option>
+                      <option value={language.role5_title}>
+                        {language.role5_title}
+                      </option>
+                    </select>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {this.state.isOwner && this.state.status === 2 && (
+            <div className="startButton">
+              <h2 className="buttonText">{language.result}</h2>
+            </div>
+          )}
+          {this.state.isOwner && this.state.status === 0 && (
             <div
               className={
                 this.state.users.length === 5

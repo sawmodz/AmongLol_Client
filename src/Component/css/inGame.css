@@ -57,6 +57,7 @@
   background-color: #00b894;
   border-radius: 15px;
   transition: 250ms;
+  margin-top: 20px;
 }
 
 .startButtonDisable {
@@ -79,4 +80,18 @@
   color: #dfe6e9;
   width: 50%;
   text-align: center;
+}
+
+.selector {
+  display: flex;
+  flex-direction: row;
+}
+
+.selectorTitle {
+  color: #dfe6e9;
+  text-align: center;
+}
+
+.selectorUser {
+  margin: 0 10px 0 10px;
 }
