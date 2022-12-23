@@ -14,5 +14,13 @@
   "role2": "Le pacifiste: Ne pas kill une seul fois l'ennemie de sa lane",
   "role3": "Clavier cassé: Jouer un champion avec un sort en moin",
   "role4": "Epée de plume: Faire moins de 10000 dégats",
-  "role5": "Ecrire une musique/poème/dessin avec les mots imposé par les autres joueur en début de partie !"
+  "role5": "Ecrire une musique/poème/dessin avec les mots imposé par les autres joueur en début de partie !",
+  "finishRolesPhases": "Partie Terminé",
+  "role1_title": "Imposteur",
+  "role2_title": "Le pacifiste",
+  "role3_title": "Clavier cassé",
+  "role4_title": "Epée de plume",
+  "role5_title": "Compositeur de music",
+  "nothing": "Aucun",
+  "result": "Resultat !"
 }

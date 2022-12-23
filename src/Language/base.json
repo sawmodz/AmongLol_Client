@@ -14,5 +14,13 @@
   "role2": "The pacifist: Do not kill once the enemy of his lane",
   "role3": "Broken keyboard: Playing a champion with a broken spell",
   "role4": "Feather Sword: Do less than 10000 damage",
-  "role5": "Write a music/poem/drawing with the words imposed by the other players at the beginning of the game!"
+  "role5": "Write a music/poem/drawing with the words imposed by the other players at the beginning of the game!",
+  "finishRolesPhases": "Game finish !",
+  "role1_title": "Impostor",
+  "role2_title": "The pacifist",
+  "role3_title": "Broken keyboard",
+  "role4_title": "Feather Sword",
+  "role5_title": "Music Composer",
+  "nothing": "nothing",
+  "result": "Result !"
 }
