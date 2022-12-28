@@ -12,6 +12,9 @@ export default class InGame extends React.Component {
     status: "",
     roles: 0,
     rolesResult: {},
+    isValid: false,
+    rolesNumber: 0,
+    result: {},
   };
   constructor(props) {
     super(props);
@@ -46,6 +49,41 @@ export default class InGame extends React.Component {
       });
     });
 
+    props.socket.on("end", (message) => {
+      let myValue = message.myResult;
+      let resultFinal = {};
+      let userRoles = {};
+      myValue.forEach((result) => {
+        userRoles[result.user] = result.roles;
+      });
+      myValue.forEach((result) => {
+        let myresult = {};
+        for (let key in result.result) {
+          switch (result.result[key]) {
+            case "Imposteur":
+              myresult[key] = userRoles[key] === 1;
+              break;
+            case "Le pacifiste":
+              myresult[key] = userRoles[key] === 2;
+              break;
+            case "Clavier cassé":
+              myresult[key] = userRoles[key] === 3;
+              break;
+            case "Epée de plume":
+              myresult[key] = userRoles[key] === 4;
+              break;
+
+            default:
+              myresult[key] = userRoles[key] === 5;
+              break;
+          }
+        }
+        resultFinal[result.user] = myresult;
+      });
+      this.setState({ result: resultFinal, status: 3 });
+      console.log(resultFinal);
+    });
+
     props.socket.on("chooseRoles", (message) => {
       this.setState({ status: message.status });
     });
@@ -56,6 +94,10 @@ export default class InGame extends React.Component {
         isOwner: message.match.owner === match.nickname,
         status: message.match.status,
       });
+    });
+
+    props.socket.on("valid", (message) => {
+      this.setState({ isValid: true });
     });
 
     props.socket.on("kickPlayer", (message) => {
@@ -91,7 +133,7 @@ export default class InGame extends React.Component {
           role = language.role5;
           break;
       }
-      this.setState({ roles: role, status: 1 });
+      this.setState({ roles: role, status: 1, rolesNumber: message.roles });
     });
   }
   render() {
@@ -147,6 +189,7 @@ export default class InGame extends React.Component {
           {this.state.status === 2 && (
             <div className="selector">
               {this.state.users.map((user, key) => {
+                if (user === storage.nickname) return;
                 return (
                   <div
                     key={key}
@@ -158,7 +201,6 @@ export default class InGame extends React.Component {
                           [user]: e.target.value,
                         },
                       });
-                      console.log(this.state.rolesResult);
                     }}
                   >
                     <h3 className="selectorTitle">{user}</h3>
@@ -190,10 +232,21 @@ export default class InGame extends React.Component {
               })}
             </div>
           )}
-
-          {this.state.isOwner && this.state.status === 2 && (
-            <div className="startButton">
-              <h2 className="buttonText">{language.result}</h2>
+          {this.state.status === 2 && (
+            <div
+              className={
+                !this.state.isValid ? "startButton" : "startButtonDisable"
+              }
+              onClick={() => {
+                this.props.socket.emit("valid", {
+                  reply: this.state.rolesResult,
+                  player: storage.nickname,
+                  code: storage.id,
+                  roles: this.state.rolesNumber,
+                });
+              }}
+            >
+              <h2 className="buttonText">{language.valid}</h2>
             </div>
           )}
           {this.state.isOwner && this.state.status === 0 && (

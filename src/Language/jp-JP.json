@@ -17,5 +17,6 @@
   "role5": "ゲーム開始時に他のプレイヤーが課した言葉を使って、音楽・詩・絵を書こう!",
   "finishRolesPhases": "ゲーム終了",
   "nothing": "何でもない",
-  "result": "出来栄え"
+  "result": "出来栄え",
+  "valid": "Valider"
 }
